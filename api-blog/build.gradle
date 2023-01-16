@@ -3,5 +3,14 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":config-datasource"))
+
     implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
+
+    // query dsl
+    implementation("com.querydsl:querydsl-jpa:${queryDslVersion}")
+    annotationProcessor("javax.persistence:javax.persistence-api:${persistenceApiVersion}")
+    annotationProcessor("javax.annotation:javax.annotation-api:${javaxAnnotaionApiVersion}")
+    annotationProcessor("com.querydsl:querydsl-apt:${queryDslVersion}:jpa")
 }

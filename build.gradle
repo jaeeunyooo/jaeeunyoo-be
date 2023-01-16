@@ -25,6 +25,10 @@ subprojects {
 
         // SpringBoot
         implementation("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+
+        // Lombok
+        compileOnly("org.projectlombok:lombok:${lombokVersion}")
+        annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
     }
 }
 
