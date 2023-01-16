@@ -43,3 +43,6 @@ transaction-logs/
 
 # Log file
 *.log
+
+# pid file
+pid/
