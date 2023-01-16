@@ -1,6 +1,6 @@
 package com.jaeeunyoo.apiblog;
 
-import com.jaeeunyoo.configdatasource.DataSourceConfiguration;
+import com.jaeeunyoo.infradatasource.DataSourceConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.ApplicationPidFileWriter;

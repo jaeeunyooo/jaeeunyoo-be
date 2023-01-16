@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":config-datasource"))
+    implementation(project(":infra-datasource"))
 
     implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")

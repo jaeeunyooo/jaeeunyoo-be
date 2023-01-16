@@ -1,4 +1,4 @@
-package com.jaeeunyoo.configdatasource;
+package com.jaeeunyoo.infradatasource;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
