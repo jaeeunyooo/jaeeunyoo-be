@@ -1,0 +1,8 @@
+rootProject.name = 'jaeeunyoo-be'
+include 'common'
+include 'api-blog'
+include 'api-www'
+include 'config-datasource'
+include 'config-cache'
+include 'api-member'
+
