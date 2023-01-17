@@ -1,17 +1,35 @@
 plugins {
-    id 'java'
+    id "java"
+    id "org.springframework.boot" version("${springBootVersion}")
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group "com.jaeeunyoo"
 
-repositories {
-    mavenCentral()
+allprojects {
+    repositories {
+        mavenCentral()
+    }
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+jar {
+    enabled = false
+}
+
+subprojects {
+    apply plugin: "java"
+
+    dependencies {
+        // JUnit
+        testImplementation("org.junit.jupiter:junit-jupiter-api:${jUnitVersion}")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${jUnitVersion}")
+
+        // SpringBoot
+        implementation("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+
+        // Lombok
+        compileOnly("org.projectlombok:lombok:${lombokVersion}")
+        annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+    }
 }
 
 test {
