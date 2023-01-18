@@ -5,4 +5,5 @@ include 'api-www'
 include 'infra-datasource'
 include 'infra-cache'
 include 'api-member'
+include 'infra-jpa'
 
