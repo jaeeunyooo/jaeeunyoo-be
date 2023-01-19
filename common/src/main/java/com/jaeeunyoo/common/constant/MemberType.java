@@ -1,12 +1,11 @@
-package com.jaeeunyoo.common.constants;
+package com.jaeeunyoo.common.constant;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public enum PostType {
+public enum MemberType {
 
-    BLOG_CONTENT,
-    ABOUT;
+    OWNER;
 }

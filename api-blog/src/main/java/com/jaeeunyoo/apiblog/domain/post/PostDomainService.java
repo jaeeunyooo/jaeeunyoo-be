@@ -17,8 +17,8 @@ public class PostDomainService {
 
     private final PostEntityRepository postEntityRepository;
 
-    public Page<Post> getPostPage(Integer memberId, Pageable pageable) {
-        Page<PostEntity> postEntityPage = postEntityRepository.getAllByPageable(memberId, pageable);
+    public Page<Post> getPostPage(Integer blogId, Pageable pageable) {
+        Page<PostEntity> postEntityPage = postEntityRepository.getAllByPageable(blogId, pageable);
         return new PageImpl<>(Post.of(postEntityPage.getContent()),
                               pageable,
                               postEntityPage.getTotalElements());

@@ -1,6 +1,5 @@
 package com.jaeeunyoo.apiblog.domain.post.entity;
 
-import com.jaeeunyoo.common.constants.PostType;
 import com.jaeeunyoo.infrajpa.model.PostEntity;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -22,8 +21,7 @@ import java.util.stream.Collectors;
 public class Post {
 
     private Integer postId;
-    private Integer memberId;
-    private PostType postType;
+    private Integer blogId;
     private Integer categoryId;
     private String title;
     private String markdownContent;
@@ -36,8 +34,7 @@ public class Post {
     public static Post of(PostEntity postEntity) {
         Post post = new Post();
         post.postId = postEntity.getPostId();
-        post.memberId = postEntity.getMemberId();
-        post.postType = postEntity.getPostType();
+        post.blogId = postEntity.getBlogId();
         post.categoryId = postEntity.getCategoryId();
         post.title = postEntity.getTitle();
         post.markdownContent = postEntity.getMarkdownContent();

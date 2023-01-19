@@ -1,6 +1,5 @@
 package com.jaeeunyoo.infrajpa.model;
 
-import com.jaeeunyoo.common.constants.PostType;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -10,8 +9,6 @@ import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,8 +25,7 @@ public class PostEntity {
 
     @Builder
     public PostEntity(Integer postId,
-                      Integer memberId,
-                      PostType postType,
+                      Integer blogId,
                       Integer categoryId,
                       String title,
                       String markdownContent,
@@ -39,8 +35,7 @@ public class PostEntity {
                       LocalDateTime updatedAt,
                       LocalDateTime deletedAt) {
         this.postId = postId;
-        this.memberId = memberId;
-        this.postType = postType;
+        this.blogId = blogId;
         this.categoryId = categoryId;
         this.title = title;
         this.markdownContent = markdownContent;
@@ -56,14 +51,10 @@ public class PostEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer postId;
 
-    @Column(name = "member_id", nullable = false)
-    private Integer memberId;
+    @Column(name = "blog_id", nullable = false)
+    private Integer blogId;
 
-    @Column(name = "post_type", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private PostType postType;
-
-    @Column(name = "category_id", nullable = false)
+    @Column(name = "category_id")
     private Integer categoryId;
 
     @Column(name = "title", nullable = false)

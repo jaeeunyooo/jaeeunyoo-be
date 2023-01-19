@@ -15,7 +15,7 @@ public class GuestPostService {
 
     private final PostDomainService postDomainService;
 
-    public Page<Post> getGuestPostPage(Integer memberId, Pageable pageable) {
-        return postDomainService.getPostPage(memberId, pageable);
+    public Page<Post> getGuestPostPage(Integer blogId, Pageable pageable) {
+        return postDomainService.getPostPage(blogId, pageable);
     }
 }

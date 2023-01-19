@@ -1,6 +1,5 @@
 package com.jaeeunyoo.infrajpa.repository.querydsl;
 
-import com.jaeeunyoo.common.constants.PostType;
 import com.jaeeunyoo.infrajpa.model.PostEntity;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
@@ -19,13 +18,12 @@ public class PostEntityCustomRepositoryImpl implements PostEntityCustomRepositor
     private final JPAQueryFactory jpaQueryFactory;
 
     @Override
-    public PageImpl<PostEntity> getAllByPageable(Integer memberId, Pageable pageable) {
+    public PageImpl<PostEntity> getAllByPageable(Integer blogId, Pageable pageable) {
         long count = jpaQueryFactory.select(postEntity.postId)
             .from(postEntity)
             .where(postEntity.deletedAt.isNull(),
                    postEntity.published.eq(true),
-                   postEntity.postType.eq(PostType.BLOG_CONTENT),
-                   postEntity.memberId.eq(memberId))
+                   postEntity.blogId.eq(blogId))
             .fetch()
             .size();
 
@@ -33,8 +31,7 @@ public class PostEntityCustomRepositoryImpl implements PostEntityCustomRepositor
             .from(postEntity)
             .where(postEntity.deletedAt.isNull(),
                    postEntity.published.eq(true),
-                   postEntity.postType.eq(PostType.BLOG_CONTENT),
-                   postEntity.memberId.eq(memberId))
+                   postEntity.blogId.eq(blogId))
             .offset(pageable.getOffset())
             .limit(pageable.getPageSize())
             .fetch();

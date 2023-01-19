@@ -21,8 +21,8 @@ public class PostController {
     private final GuestPostService guestPostService;
 
     @GetMapping
-    public Page<Post> getPostsByPageable(@RequestParam(name = "memberId") Integer memberId,
+    public Page<Post> getPostsByPageable(@RequestParam(name = "blogId") Integer blogId,
                                          @PageableDefault(page = 0, size = 10) Pageable pageable) {
-        return guestPostService.getGuestPostPage(memberId, pageable);
+        return guestPostService.getGuestPostPage(blogId, pageable);
     }
 }
