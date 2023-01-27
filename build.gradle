@@ -16,7 +16,22 @@ jar {
 }
 
 subprojects {
+
     apply plugin: "java"
+
+    task initSourceFolders {
+        sourceSets*.java.srcDirs*.each {
+            if (!it.exists() && !project.rootProject && project.name != 'datasource' && project.name != 'cache') {
+                it.mkdirs()
+            }
+        }
+
+        sourceSets*.resources.srcDirs*.each {
+            if (!it.exists() && !project.rootProject && project.name != 'datasource' && project.name != 'cache') {
+                it.mkdirs()
+            }
+        }
+    }
 
     dependencies {
         // JUnit
@@ -29,6 +44,12 @@ subprojects {
         // Lombok
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
         annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+
+        // Validation
+        implementation("org.springframework.boot:spring-boot-starter-validation:${springBootVersion}")
+
+        // Apache
+        implementation("org.apache.commons:commons-lang${apacheCommonVersion}")
     }
 }
 

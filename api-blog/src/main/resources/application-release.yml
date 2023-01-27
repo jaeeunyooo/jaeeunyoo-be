@@ -1,4 +1,3 @@
-server.port: 10000
 spring:
   pid:
     file: /home/jaeeunyoo/pid/jaeeunyoo/api-blog.pid

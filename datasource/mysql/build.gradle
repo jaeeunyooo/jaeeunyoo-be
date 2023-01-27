@@ -1,0 +1,11 @@
+plugins {
+    id "org.springframework.boot"
+}
+
+dependencies {
+    // MySql Connector
+    implementation("mysql:mysql-connector-java:${mysqlConnectorVersion}")
+
+    // SpringBoot JDBC
+    implementation("org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}")
+}

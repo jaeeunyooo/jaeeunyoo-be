@@ -1,7 +1,7 @@
 package com.jaeeunyoo.apiblog.application;
 
-import com.jaeeunyoo.apiblog.domain.post.PostDomainService;
-import com.jaeeunyoo.apiblog.domain.post.entity.Post;
+import com.jaeeunyoo.domain.blog.BlogDomainService;
+import com.jaeeunyoo.domain.blog.entity.Post;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class GuestPostService {
 
-    private final PostDomainService postDomainService;
+    private final BlogDomainService blogDomainService;
 
     public Page<Post> getGuestPostPage(Integer blogId, Pageable pageable) {
-        return postDomainService.getPostPage(blogId, pageable);
+        return blogDomainService.getPostPage(blogId, pageable);
     }
 }
