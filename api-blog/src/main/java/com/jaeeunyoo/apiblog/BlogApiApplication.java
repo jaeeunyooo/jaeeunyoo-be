@@ -7,8 +7,10 @@ import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.context.annotation.Import;
 
 @Import({ DomainConfiguration.class })
-@SpringBootApplication(scanBasePackages = { "com.jaeeunyoo" })
+@SpringBootApplication(scanBasePackages = { BlogApiApplication.BASE_PACKAGE })
 public class BlogApiApplication {
+
+    public static final String BASE_PACKAGE = "com.jaeeunyoo";
 
     public static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(BlogApiApplication.class);
