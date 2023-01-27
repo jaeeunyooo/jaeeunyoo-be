@@ -1,19 +1,12 @@
 plugins {
-    id 'java'
-}
-
-group 'com.jaeeunyoo'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+    id "org.springframework.boot"
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-}
+    implementation(project(":common"))
+    implementation(project(":domain"))
+    implementation(project(":outbound"))
 
-test {
-    useJUnitPlatform()
+    implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    implementation("org.springframework.data:spring-data-jpa:${springBootVersion}")
 }

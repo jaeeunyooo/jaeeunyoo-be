@@ -1,0 +1,10 @@
+plugins {
+    id "org.springframework.boot"
+}
+
+dependencies {
+    implementation(project(":common"))
+    implementation(project(":infrastructure"))
+    implementation("org.springframework.data:spring-data-jpa:${springBootVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+}

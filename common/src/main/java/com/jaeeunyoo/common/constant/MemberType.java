@@ -7,5 +7,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum MemberType {
 
-    OWNER;
+    OWNER,
+    BLOG_USER;
 }
